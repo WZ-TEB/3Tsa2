@@ -3,26 +3,34 @@ package org.example;
 import java.util.UUID;
 
 public class Client {
-    private final String firstName;
-    private final String lastName;
+    private String firstName;
+    private String lastName;
     private String email;
     private boolean premiumStatus;
-    private final String userId;
+    private final String clientId;
 
     public Client(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.premiumStatus = false;
-        this.userId = UUID.randomUUID().toString();
+        this.clientId = UUID.randomUUID().toString();
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -41,7 +49,7 @@ public class Client {
         this.premiumStatus = premiumStatus;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getClientId() {
+        return clientId;
     }
 }
