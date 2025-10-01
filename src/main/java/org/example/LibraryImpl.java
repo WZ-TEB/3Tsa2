@@ -5,6 +5,7 @@ import java.util.HashMap;
 public class LibraryImpl implements Library {
 
     HashMap<String, Client> clients = new HashMap<>();
+    HashMap<String, Book> books = new HashMap<>();
 
     @Override
     public String addClient(String firstName, String lastName, String email) {
