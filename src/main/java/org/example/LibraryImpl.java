@@ -25,17 +25,21 @@ public class LibraryImpl implements Library {
     }
 
     @Override
-    public void addBook() {
-
+    public String addBook(String title, String author) {
+        Book book = new Book(title, author);
+        books.put(book.getBookId(), book);
+        return book.getBookId();
     }
 
     @Override
-    public void removeBook() {
-
+    public void removeBook(String bookId) {
+        books.remove(bookId);
     }
 
     @Override
-    public void rentBookToClient() {
-
+    public void rentBookToClient(String clientId, String bookId) {
+        Client client = clients.get(clientId);
+        Book book = books.get(bookId);
+        client.addBookToClient(bookId);
     }
 }

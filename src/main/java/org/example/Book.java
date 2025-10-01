@@ -7,7 +7,7 @@ public class Book {
     private final String author;
     private final String bookId;
 
-    public Book(String title, String author, String bookId) {
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
         this.bookId = UUID.randomUUID().toString();

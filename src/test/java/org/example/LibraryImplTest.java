@@ -24,28 +24,45 @@ class LibraryImplTest {
     void addClient() {
         //given
         //when
+        testLibrary.addClient("testFirstName", "testLastName", "testEmail");
         //then
+        assertEquals(1, testLibrary.clients.size());
     }
 
     @Test
     void removeClient() {
         //given
+        String testClientId = testLibrary.addClient("testFirstName", "testLastName", "testEmail");
         //when
+        testLibrary.removeClient(testClientId);
         //then
+        assertEquals(0, testLibrary.clients.size());
     }
 
     @Test
     void addBook() {
+        //given
 
+        //when
+
+        //then
     }
 
     @Test
     void removeBook() {
+        //given
 
+        //when
+
+        //then
     }
 
     @Test
     void rentBookToClient() {
+        //given
 
+        //when
+
+        //then
     }
 }
