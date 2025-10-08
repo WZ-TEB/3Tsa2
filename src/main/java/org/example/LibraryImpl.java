@@ -6,6 +6,7 @@ public class LibraryImpl implements Library {
 
     HashMap<String, Client> clients = new HashMap<>();
     HashMap<String, Book> books = new HashMap<>();
+    HashMap<String, String> booksOfClients = new HashMap<>();
 
     @Override
     public String addClient(String firstName, String lastName, String email) {
@@ -38,8 +39,6 @@ public class LibraryImpl implements Library {
 
     @Override
     public void rentBookToClient(String clientId, String bookId) {
-        Client client = clients.get(clientId);
-        Book book = books.get(bookId);
-        client.addBookToClient(bookId);
+        booksOfClients.put(bookId, clientId);
     }
 }

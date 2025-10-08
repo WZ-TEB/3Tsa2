@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 public class Client {
@@ -9,7 +8,6 @@ public class Client {
     private String email;
     private boolean premiumStatus;
     private final String clientId;
-    private final ArrayList<String> bookIds;
 
     public Client(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -17,7 +15,6 @@ public class Client {
         this.email = email;
         this.premiumStatus = false;
         this.clientId = UUID.randomUUID().toString();
-        this.bookIds = new ArrayList<>();
     }
 
     public String getFirstName() {
@@ -54,13 +51,5 @@ public class Client {
 
     public String getClientId() {
         return clientId;
-    }
-
-    public ArrayList<String> getBookIds() {
-        return bookIds;
-    }
-
-    public void addBookToClient(String bookId) {
-        this.bookIds.add(bookId);
     }
 }

@@ -22,10 +22,10 @@ class LibraryImplTest {
 
     @Test
     void addClient() {
-        //given
-        //when
+        //given  -> tutaj są dane potrzebne do testu
+        //when  -> tutaj wywołuje się metodę testowaną
         testLibrary.addClient("testFirstName", "testLastName", "testEmail");
-        //then
+        //then  -> tutaj piszemy asserta, który ma sprawdzić wynik testu przewidywany przez nas
         assertEquals(1, testLibrary.clients.size());
     }
 
