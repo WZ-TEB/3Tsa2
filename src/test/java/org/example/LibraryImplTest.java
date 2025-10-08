@@ -42,27 +42,40 @@ class LibraryImplTest {
     @Test
     void addBook() {
         //given
-
         //when
-
+        testLibrary.addBook("testTitle", "testAuthor");
         //then
+        assertEquals(1, testLibrary.books.size());
     }
 
     @Test
     void removeBook() {
         //given
-
+        String testBookId = testLibrary.addBook("testTitle", "testAuthor");
         //when
-
+        testLibrary.removeBook(testBookId);
         //then
+        assertEquals(0, testLibrary.books.size());
     }
 
     @Test
     void rentBookToClient() {
         //given
+        String testClientId  = testLibrary.addClient("testFirstName", "testLastName", "testEmail");
+        String testBookId = testLibrary.addBook("testTitle", "testAuthor");
+        //when
+        testLibrary.rentBookToClient(testClientId, testBookId);
+        //then
+        assertEquals(testClientId, testLibrary.booksOfClients.get(testBookId));
+    }
+
+    @Test
+    void activatePremiumStatus() {
+        //given
 
         //when
 
         //then
+
     }
 }
